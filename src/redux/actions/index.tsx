@@ -13,6 +13,8 @@ export const LOGOUT = 'LOGOUT';
 
 export const FETCH_BASE_DATA = 'FETCH_BASE_DATA';
 
+// Add Actions Here
+
 /** @Note Action types for pages entities */
 
 

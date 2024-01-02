@@ -1,4 +1,4 @@
-Anyhow Cloud Frontend
+[project_name]
 =====================
 
 ## Dependencies

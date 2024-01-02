@@ -26,7 +26,9 @@ const navItems = [
         key : 'Dashboard',
         label : 'Dashboard',
         route : routes.dasboard.root,
-    }
+    },
+
+    // Add top menu items here
 ]
 
 const Header: React.FC<Props> = ({

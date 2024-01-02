@@ -1,8 +1,13 @@
 {
-  "name": "anyhow-admin",
+  "name": "react-template",
   "version": "1.0.0",
-  "description": "Anyhow Cloud Setup",
+  "description": "react-template",
   "main": "index.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Memorres/{project_name}.git",
+    "baseUrl": "https://github.com/Arpitsharma1210/{project_name}.git"
+  },
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev --host=0.0.0.0",
     "build:prod": "webpack --config webpack/webpack.config.js --env env=prod",
