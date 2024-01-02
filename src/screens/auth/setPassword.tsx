@@ -60,7 +60,7 @@ const SetPassword = () => {
                     padding: 0
                 }}
             >
-                <StyledLogo src='/assets/images/logo.svg' />
+                <StyledLogo src='/assets/images/logo.png' />
                 <StyledHeading variant='h1'>{messages?.setPassword?.heading}</StyledHeading>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Grid
