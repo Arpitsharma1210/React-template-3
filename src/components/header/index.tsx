@@ -15,6 +15,7 @@ import { routes } from '../../utils';
 import { useLocation } from 'react-router-dom';
 import { push } from 'connected-react-router';
 import { logout } from '../../redux/actions';
+import { Right } from "../../redux/reducers/auth";
 
 
 interface Props {
@@ -26,6 +27,8 @@ const navItems = [
         key : 'Dashboard',
         label : 'Dashboard',
         route : routes.dasboard.root,
+        icon: '',
+        right: Right.DASHBOARD
     },
 
     // Add sidebar menu items here

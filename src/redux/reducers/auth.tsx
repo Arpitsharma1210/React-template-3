@@ -1,29 +1,27 @@
 import { Action, TOKEN_REMOVE, TOKEN_UPDATE } from '../actions';
 
 export enum Right {
-    COMPANY_MODULE = 'COMPANY_MODULE',
-    ADMIN_MODULE = 'ADMIN_MODULE'
+    DASHBOARD = 'DASHBOARD',
 }
 
 export enum AuthenticationStatus {
     AUTHENTICATED = 'AUTHENTICATED',
-    SET_PASSWORD = 'SET_PASSWORD',
     NOT_AUTHENTICATED = 'NOT_AUTHENTICATED'
 }
 
 export enum Role {
-    SUPER_ADMIN = 'SUPER_ADMIN',
-    ORG_ADMIN = 'ORG_ADMIN',
-    ORG_CREATOR = 'ORG_CREATOR',
-    ORG_VIEWER ='ORG_VIEWER',
+    ADMINISTRATOR = 'ADMINISTRATOR',
     INVALID = 'INVALID'
 }
+
+export const RolePrioriry:any = {
+  ADMINISTRATOR: 1,
+};
 
 export interface AuthState {
     rights: Right[];
     status: AuthenticationStatus;
     role:Role;
-    tempPass:boolean;
     token?: string;
     hasStatusAndRight(status ?: AuthenticationStatus, right ?: Right): boolean;
     hasRole(role ?: Role): boolean;
@@ -33,7 +31,6 @@ export const defaultAuthState:AuthState = {
   rights: [],
   status: AuthenticationStatus.NOT_AUTHENTICATED,
   role: Role.INVALID,
-  tempPass: false,
   token: undefined,
   hasStatusAndRight(
     status ?: AuthenticationStatus,
@@ -56,12 +53,11 @@ export const defaultAuthState:AuthState = {
   },
 };
 
-
 const getRightsForRole = (role: Role): Right[] => {
   switch (role) {
-    case Role.SUPER_ADMIN:
+    case Role.ADMINISTRATOR:
       return [
-        Right.COMPANY_MODULE, Right.ADMIN_MODULE
+        Right.DASHBOARD,
       ];
     default:
       return [];
@@ -71,27 +67,23 @@ const getRightsForRole = (role: Role): Right[] => {
 export function getStateFromToken(state: AuthState, token: string | undefined): AuthState {
   let rights: Right[] | undefined;
   let role:Role;
-  let tempPass:boolean;
   let status:AuthenticationStatus;
   if (token) {
     try {
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       const tokenData: any = JSON.parse(atob(token.split('.')[1]));
-      role = Role.SUPER_ADMIN;
+      role = Role.ADMINISTRATOR;
       rights = getRightsForRole(role);
-      tempPass = !!tokenData?.tempPass;
-      status = tempPass ? AuthenticationStatus.SET_PASSWORD :AuthenticationStatus.AUTHENTICATED;
+      status = AuthenticationStatus.AUTHENTICATED;
     } catch (e) {
       // This is fine, parsing failed because eg. token is invalid
       rights = undefined;
       role = Role.INVALID;
-      tempPass = false;
       status = AuthenticationStatus.AUTHENTICATED;
     }
   } else {
     rights = undefined;
     role = Role.INVALID;
-    tempPass = false;
     status = AuthenticationStatus.AUTHENTICATED;
   }
 
@@ -100,9 +92,8 @@ export function getStateFromToken(state: AuthState, token: string | undefined): 
       ...state,
       rights,
       role,
-      tempPass,
       token,
-      status
+      status,
     };
   }
 
