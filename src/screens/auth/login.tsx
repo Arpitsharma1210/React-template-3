@@ -27,7 +27,7 @@ const Login = () => {
 
     const onSubmit = (data: any) => (
         new Promise<any>((resolve, reject) => {
-            reduxDispatch(push(routes.dasboard.root))
+            reduxDispatch(push(routes.dashboard.root))
         }).then(() => {
 
         }).catch(() => {

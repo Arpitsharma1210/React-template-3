@@ -8,7 +8,7 @@ export default (): JSX.Element => (
     <Route
       exact
       key="dashboard"
-      path={routes.dasboard.root}
+      path={routes.dashboard.root}
       component={Dashboard}
     />
   </Switch>

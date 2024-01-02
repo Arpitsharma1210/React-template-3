@@ -9,7 +9,7 @@ export const routes = {
   setPassword: '/set-password',
   forgotPassword: '/forgot-password',
   resetPassword: '/reset-password/:token',
-  dasboard:createResourceRoutes('dashboard'),
+  dashboard:createResourceRoutes('dashboard'),
 };
 
 export default routes;

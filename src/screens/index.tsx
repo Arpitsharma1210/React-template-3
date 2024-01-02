@@ -23,8 +23,9 @@ const Screens: React.FC = () => {
           <Route path={routes.login} component={Login} />
           <Route path={routes.forgotPassword} component={ForgotPassword} />
           <Route path={routes.resetPassword} component={ResetPassword} />
-          <Route path={routes.dasboard.root} component={Dashboard} />
           <Route path={routes.setPassword} component={SetPassword} />
+          <Route path={routes.dashboard.root} component={Dashboard} />
+          
           <Route component={() => <Redirect to={routes.login} />} />
         </Switch>
       </OnlyWith>
