@@ -12,4 +12,7 @@ export {default as PopupError} from './popupError';
 export {default as MaterialAutocompleteInput} from './materialAutocompleteInput';
 export {default as Toast} from './toast';
 export {default as MaterialDateInput} from './materialDateInput';
+export {default as ModalAction} from './modalAction';
+export {default as Modal } from './modal';
+export {default as Table } from './table';
 export * from './form';

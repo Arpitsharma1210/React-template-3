@@ -26,7 +26,7 @@ const navItems = [
     {
         key : 'Dashboard',
         label : 'Dashboard',
-        route : routes.dasboard.root,
+        route : routes.dashboard.root,
         icon: '',
         right: Right.DASHBOARD
     },
@@ -44,7 +44,7 @@ const Header: React.FC<Props> = ({
     return (
         <StyledContainer>
             <StyledLogoContainer>
-                <StyledLogo src='/assets/images/logoSmall.png' />
+                <StyledLogo src='/assets/images/smallLogo.png' />
             </StyledLogoContainer>
             <StyledNavContainer>
                 {navItems.map((navItem)=>(

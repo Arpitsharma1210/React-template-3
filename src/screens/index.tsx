@@ -8,7 +8,7 @@ import { ForgotPassword, Login, ResetPassword, SetPassword } from "./auth";
 import { routes } from "../utils";
 import { AuthenticationStatus } from "../redux/reducers/auth";
 import { OnlyWith } from "../components";
-import Dashboard from "./dashboard/dashboard";
+import Dashboard from "./dashboard";
 
 const Screens: React.FC = () => {
   return (
