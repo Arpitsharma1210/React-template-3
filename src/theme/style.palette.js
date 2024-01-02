@@ -10,8 +10,8 @@ export const colors = {
 }
 
 export const brand = {
-    primaryMain: '#423ED3',
-    secondaryMain: '#212529',
+    primaryMain: '#6063EA',
+    secondaryMain: '#242E4A',
     textColour : '#212529',
     textColourLight : '#757C82',
     textColourDark : '#464B4F',

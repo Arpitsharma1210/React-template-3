@@ -41,7 +41,7 @@ const Header: React.FC<Props> = ({
     return (
         <StyledContainer>
             <StyledLogoContainer>
-                <StyledLogo src='/assets/images/logo-small.svg' />
+                <StyledLogo src='/assets/images/logoSmall.png' />
             </StyledLogoContainer>
             <StyledNavContainer>
                 {navItems.map((navItem)=>(
