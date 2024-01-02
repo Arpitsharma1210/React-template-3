@@ -26,7 +26,7 @@ const navItems = [
     {
         key : 'Dashboard',
         label : 'Dashboard',
-        route : routes.dashboard.root,
+        path : routes.dashboard.root,
         icon: '',
         right: Right.DASHBOARD
     },
@@ -49,9 +49,9 @@ const Header: React.FC<Props> = ({
             <StyledNavContainer>
                 {navItems.map((navItem)=>(
                     <StyledNavItem 
-                        active={location.pathname.startsWith(navItem.route)} 
+                        active={location.pathname.startsWith(navItem.path)} 
                         key={navItem?.key}
-                        onClick={()=>reduxDispatch(push(navItem.route))}
+                        onClick={()=>reduxDispatch(push(navItem.path))}
                     >
                         <StyledNavItemText variant="body2">
                             {navItem?.label}
