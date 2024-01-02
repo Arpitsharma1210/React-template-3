@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 
-
 export const UPDATE_FORM = 'UPDATE_FORM';
 export const VALIDATE_FORM = 'VALIDATE_FORM';
 export const RESET_FORM = 'RESET_FORM';
@@ -11,7 +10,6 @@ export const UPDATE_SUBMIT_ERROR = 'UPDATE_SUBMIT_ERROR';
 
 export type ErrorMessage = string | undefined;
 export type Validator = (value: any, formValues?: any) => ErrorMessage;
-
 
 interface FormValue{
     value?:any;
@@ -42,7 +40,7 @@ type FormReducer = (state:FormState, action:FormAction)=>FormState;
 type FormSubmitCallBack = (formValues:Record<string, FormValue>)=>Promise<any>;
 
 interface FormHook extends FormState{
-    change:(key:string, value:any)=>void;
+    change:(key:string, value:any, error?:any)=>void;
     reset:()=>void;
     dirty:()=>void;
     setSubmitError:(error?:string)=>void;
@@ -175,8 +173,8 @@ export const useFormReducer = (
     dispatch({ type: VALIDATE_FORM });
   };
 
-  const change = (key:string, value:any) => {
-    dispatch({ type: UPDATE_FORM, payload: { key, value } });
+  const change = (key:string, value:any, error?:any) => {
+    dispatch({ type: UPDATE_FORM, payload: { key, value, error } });
     setTimeout(() => {
       validateForm();
     }, 7);
@@ -229,8 +227,8 @@ export const useFormReducer = (
     }
   };
 
-  const connectField = (name:string, extraProps:Record<any, any> = {}) => (Field:any) => (
-    <Field
+  const connectField = (name:string, extraProps:Record<any, any> = {}) => function(Field:any) {
+  return <Field
       {...extraProps}
       name={name}
       key={name}
@@ -241,7 +239,7 @@ export const useFormReducer = (
         handleChange({ [name]: value });
       }}
     />
-  );
+};
 
   return {
     ...state, change, reset, dirty, handleSubmit, setSubmitError, connectField,
