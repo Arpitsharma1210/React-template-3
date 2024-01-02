@@ -1,0 +1,67 @@
+{
+  "en": {
+    "general" : {
+      "action" : "Action",
+      "showMore" : "Show more",
+      "search" : "Search",
+      "cancel" : "Cancel",
+      "edit" : "Edit",
+      "save" : "Save",
+      "noData" : "No data found",
+      "back" : "Back",
+      "errors" : {
+        "emailInvalid" : "Please enter a valid email",
+        "passwordInvalid" : "Your password must contain at least 8 characters, a number, and a special character",
+        "serverError" : "Something went wrong, please try again"
+      }
+    },
+    "header":{
+      "menuItems":{
+        "company" : "Company Registry",
+        "adminUser" : "Admin User"
+      }
+    },
+    "login":{
+      "heading" : "Sign in to your account",
+      "form":{
+        "email":"Email",
+        "password":"Password",
+        "logIn":"Log In",
+        "forgotPassword":"Forgot Password?",
+        "invalidDetails":"Your username or password is invalid"
+      }
+    },
+    "setPassword":{
+      "heading" : "Security first",
+      "form":{
+        "temporaryPassword":"Enter your temporary password",
+        "password":"Enter your new password",
+        "confirmPassword":"Re-enter password",
+        "savePassword":"Save Password",
+        "invalidDetails":"Your temporary password is invalid",
+        "passwordInvalid" : "Your password must contain at least 8 characters, a number, and a special character.",
+        "checkPassword": "Your password must same as above"
+      }
+    },
+    "resetPassword":{
+      "heading" : "Reset password",
+      "successHeading" : "Reset Email Sent!",
+      "troubleShootingInfo" : {
+        "text1":"Having trouble accessing your account?",
+        "text2":"If you're stuck, ",
+        "text3":"email us!"
+      },
+      "successInfo" : "You should receive an email shortly, please follow the resetting your password steps",
+      "backToLogin": "Back to log in",
+      "form":{
+        "email":"Enter email address",
+        "submitCta":"Send password reset email",
+        "invalidDetails":"Something went wrong, please try again",
+        "invalidLink":"Your reset password link is invalid",
+        "passwordInvalid" : "Your password must contain at least 8 characters, a number, and a special character.",
+        "checkPassword": "Your password must same as above"
+      }
+    }
+  
+  }
+}
