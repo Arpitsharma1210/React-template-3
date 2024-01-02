@@ -28,7 +28,7 @@ const navItems = [
         route : routes.dasboard.root,
     },
 
-    // Add top menu items here
+    // Add sidebar menu items here
 ]
 
 const Header: React.FC<Props> = ({
