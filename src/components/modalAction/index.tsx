@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { StyledContainer, StyledCtaContainer, StyledInfo, StyledInfoContainer, StyledTitle } from "./styles";
 import { Button } from "@mui/material";
 import messages from "../../messages";
+import { useDispatch } from "react-redux";
+import { apiCall } from "../../redux/actions";
+import { HttpMethods } from "../../utils";
 
 
 interface Props {
@@ -11,26 +14,32 @@ interface Props {
     onCancel?:()=>void;
     onSuccess?: ()=>Promise<unknown>;
     closePopup?:()=>void;
+    apiName?:string;
 }
 
 const ModalAction: React.FC<Props> = ({
     title, info,successCta, 
-    onCancel, onSuccess, closePopup
+    onCancel, onSuccess, closePopup,apiName
 }) => {
     const [submitting, setSubmitting] = useState(false);
+    const reduxDispatch = useDispatch();
 
     const onSubmit = async ()=>{
         setSubmitting(true);
-        try {
-            await onSuccess();
-            if(closePopup){
-                closePopup();
-            }
-        } catch (error) {
-            console.log(error);
-        }finally{
-            setSubmitting(false);
-        }
+        return new Promise<any>((resolve, reject) => {
+            reduxDispatch(
+                apiCall(apiName,resolve,reject, HttpMethods.DELETE, {})
+            );
+            })
+            .then(() => {
+                onCancel();
+                setSubmitting(false);
+            })
+            .catch((error) => {
+            //   setSubmitError(error?.message);
+                setSubmitting(false);
+            });
+            
     }
 
     return (
