@@ -9,18 +9,8 @@ const LOGIN = '/api/login';
 export const SET_PASSWORD = '/api/set-password';
 export const RESET_PASSWORD = '/api/reset-password';
 export const RESET_PASSWORD_REQUEST_LINK = '/api/reset-password/request-link';
-export const ADMINS = '/api/admins';
-export const ADMIN_FILTER = `${ADMINS}/filter`;
-export const ADMIN_RESEND_INVITE = `${ADMINS}/resend-invite`;
-export const COMPANIES = '/api/companies';
-export const COMPANY_MEMBERS = '/api/company-users';
-export const COMPANY_FILTER = `${COMPANIES}/filter`;
-export const COMPANY_AUDIT_LOGS_FILTER = `${COMPANIES}/audit-logs/filter`;
-export const COMPANY_USER_AUDIT_LOGS_FILTER = `${COMPANY_MEMBERS}/audit-logs/filter`;
-export const COMPANY_MEMBER_FILTER = `${COMPANY_MEMBERS}/filter`;
-export const COMPANY_MEMBER_INVITE = `${COMPANY_MEMBERS}/invite`;
-export const COMPANY_MEMBER_RESEND_INVITE = `${COMPANY_MEMBERS}/resend-invite`;
 
+// Add your api calls here
 
 export const apiCall = (
   endpoint: string,
