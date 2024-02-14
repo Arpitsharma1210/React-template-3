@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container component renders with default props and correct layout 1`] = `
+<div
+  className="MuiContainer-root MuiContainer-maxWidthLg sc-bcHOTY fJiLvO css-1oqqzyl-MuiContainer-root"
+>
+  <div
+    className="sc-gsMHZj gCMIax"
+  >
+    <div
+      className="sc-dkHyXG dcNAHd"
+    >
+      <img
+        className="sc-hLljAB jSMrfv"
+        src="/assets/images/smallLogo.png"
+      />
+    </div>
+    <div
+      className="sc-eDgayY jLaUws"
+    >
+      <div
+        active={false}
+        className="sc-jTkTEj kRlOPU"
+        onClick={[Function]}
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body2 sc-gLfKCG dKIwTK css-e784if-MuiTypography-root"
+        >
+          Dashboard
+        </p>
+      </div>
+    </div>
+    <div
+      className="sc-iBIYEh gvAxhF"
+      onClick={[Function]}
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body2 sc-ftDPCE jnNHKQ css-e784if-MuiTypography-root"
+      >
+        Logout
+      </p>
+    </div>
+  </div>
+</div>
+`;

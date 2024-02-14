@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Input Component matches snapshot when given props 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bcHOTY jMBOyb"
+  >
+    <label
+      class="sc-gsMHZj caCkwR"
+      readonly=""
+    >
+      Email Address
+    </label>
+    <div
+      class="sc-dkHyXG fKEDZB"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body2 sc-eDgayY loQFoz css-e784if-MuiTypography-root"
+      >
+        example@email.com
+      </p>
+    </div>
+    <p
+      class="MuiTypography-root MuiTypography-body2 sc-jTkTEj bXYaQ css-e784if-MuiTypography-root"
+    >
+      An error occurred
+    </p>
+  </div>
+</DocumentFragment>
+`;

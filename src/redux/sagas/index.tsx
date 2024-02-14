@@ -52,7 +52,7 @@ export function* handleResponse(response: Response, callback: callback,
 }
 
 
-function toArray<T>(param: T | T[] | void) {
+export function toArray<T>(param: T | T[] | void) {
   if (param) {
     return param instanceof Array ? param.filter((p) => !!p) : [param];
   }
@@ -121,7 +121,7 @@ export function getPaginationParameters(filter: MetaData<any>): string {
     .join('&');
 }
 
-function* doPaginatedApiCall<MetaDataProps, SuccessProps,
+export function* doPaginatedApiCall<MetaDataProps, SuccessProps,
   FailureProps extends Response>(
     event: { payload: PagedApiCall<MetaDataProps> },
   ): Generator<any> {
@@ -151,7 +151,7 @@ function* doPaginatedApiCall<MetaDataProps, SuccessProps,
   }
 }
 
-function* doFetchBaseData(): Generator<any> {
+export function* doFetchBaseData(): Generator<any> {
   if (getToken()) {
     const result: any = yield call(ping);
     yield* handleResponse(
@@ -170,7 +170,7 @@ function* doFetchBaseData(): Generator<any> {
 }
 
 
-function* doLogin(event: any): Generator<any> {
+export function* doLogin(event: any): Generator<any> {
   try {
     console.log("in login")
     const result: any = yield call(login, event?.payload?.formData);
@@ -201,7 +201,7 @@ function* doLogin(event: any): Generator<any> {
 }
 
 
-function* doLogout() {
+export function* doLogout() {
   try {
     yield put(removeToken());
   } catch (error) {

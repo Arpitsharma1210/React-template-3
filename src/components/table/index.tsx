@@ -16,9 +16,11 @@ import {
     StyledTable, StyledTableBody, StyledTableCell, StyledTableContainer,
     StyledTableHead, StyledTableRow
 } from "./styles";
+import moment from "moment";
 
 
 export const formatStr = (str: string): string => str;
+export const formatDate = (str: string): string => str ? moment(str).format('DD MMM YYYY') : '';
 
 
 export interface TableSpec {

@@ -3,6 +3,7 @@ import Joi from "joi";
 import { ErrorMessage, Validator } from "../hooks";
 import messages from "../messages";
 import { allAllowedTLDsListFromIANAregistry } from "./tldsListData";
+import moment from "moment";
 
 export const required = (
   errMessage: string,
@@ -59,3 +60,10 @@ export const confirmPassword = (
     value && formValues?.[validateWith]?.value !== value
       ? errMessage
       : undefined);
+
+      export const validateDate = (
+        message: string,
+      ) => (value?: string): ErrorMessage => (
+        value && !moment(value).isValid()
+          ? message : undefined);
+

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Component matches snapshot when given props 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiTableContainer-root sc-bcHOTY eJHzFw css-rorn0c-MuiTableContainer-root"
+  >
+    <table
+      class="MuiTable-root sc-gsMHZj cQYHUJ css-rqglhn-MuiTable-root"
+    >
+      <thead
+        class="MuiTableHead-root sc-dkHyXG jXIjoJ css-15wwp11-MuiTableHead-root"
+      >
+        <tr
+          class="MuiTableRow-root MuiTableRow-head sc-eDgayY dHWYrq css-1q1u3t4-MuiTableRow-root"
+        >
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium sc-jTkTEj fsBbZP css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <div
+              class="sc-gLfKCG pVfRY"
+            >
+              Name
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="ArrowDownwardIcon"
+                focusable="false"
+                style="color: rgb(161, 170, 178);"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="m20 12-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                />
+              </svg>
+            </div>
+          </th>
+          <th
+            class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium sc-jTkTEj jnGaZV css-1ygcj2i-MuiTableCell-root"
+            scope="col"
+          >
+            <div
+              class="sc-gLfKCG pVfRY"
+            >
+              Age
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="MuiTableBody-root sc-hLljAB kMPxVV css-apqrd9-MuiTableBody-root"
+      >
+        <tr
+          class="MuiTableRow-root sc-eDgayY gHVIsE css-1q1u3t4-MuiTableRow-root"
+        >
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium sc-jTkTEj gJHYeH css-1ex1afd-MuiTableCell-root"
+          >
+            John Doe
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium sc-jTkTEj gJHYeH css-1ex1afd-MuiTableCell-root"
+          >
+            25
+          </td>
+        </tr>
+        <tr
+          class="MuiTableRow-root sc-eDgayY gHVIsE css-1q1u3t4-MuiTableRow-root"
+        >
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium sc-jTkTEj gJHYeH css-1ex1afd-MuiTableCell-root"
+          >
+            Jane Doe
+          </td>
+          <td
+            class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium sc-jTkTEj gJHYeH css-1ex1afd-MuiTableCell-root"
+          >
+            30
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="sc-iBIYEh jxCSHX"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body2 sc-ftDPCE gbMioB css-e784if-MuiTypography-root"
+      >
+        Show more
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

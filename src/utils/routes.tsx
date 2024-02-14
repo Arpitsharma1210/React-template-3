@@ -1,4 +1,4 @@
-const createResourceRoutes = (resource: string) => ({
+export const createResourceRoutes = (resource: string) => ({
   root: `/${resource}`,
   create: `/${resource}/create`,
   view: `/${resource}/view/:id`,

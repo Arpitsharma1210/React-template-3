@@ -5,6 +5,7 @@ import { SxProps, Theme } from '@mui/material';
 
 interface Props {
     children: (JSX.Element|JSX.Element[]);
+    header?: (JSX.Element | JSX.Element[]);
     cardCss?:SxProps<Theme>;
     contentCss?:SxProps<Theme>;
     bordered?:boolean;
@@ -12,7 +13,7 @@ interface Props {
 
 const Card:React.FC<Props> = ({
     children, cardCss, contentCss,
-    bordered
+    bordered, header
 })=>{
 
     return (

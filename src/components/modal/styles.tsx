@@ -19,11 +19,11 @@ export const StyledHeaderContainer = styled.div`
 `
 
 export const StyledHeading= styled(Typography)`
-    color : ${colors.grey10};
+    color : ${colors.grey};
 `
 
 export const StyledSubHeading= styled(Typography)`
-    color : ${colors.grey10};
+    color : ${colors.grey};
     font-weight : ${fontWeight.medium} !important;
 `
 
@@ -34,7 +34,7 @@ export const StyledCloseContainer = styled.div`
     width : 32px;
     height : 32px;
     border-radius : 50%;
-    background-color : ${colors.grey10};
+    background-color : ${colors.grey};
     display:flex;
     align-items:center;
     justify-content:center;

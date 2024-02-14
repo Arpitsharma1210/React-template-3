@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast Component matches snapshot when given props 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bcHOTY fWFYiZ"
+  >
+    <div
+      class="sc-gsMHZj cIKVbv"
+    >
+      <img
+        class="sc-dkHyXG kumrmy"
+        src="/assets/images/success.png"
+      />
+    </div>
+    <div
+      class="sc-hLljAB jdAZhm"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 sc-eDgayY nobhg css-ahj2mt-MuiTypography-root"
+      >
+        Success Message
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 sc-jTkTEj jbjgy css-ahj2mt-MuiTypography-root"
+      >
+        Additional Information
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
