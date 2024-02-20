@@ -1,116 +1,98 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
-import CloseIcon from '@mui/icons-material/Close';
-import { brand } from '../../theme/style.palette';
+import { brand, colors } from '../../theme/style.palette';
 import {
-    SearchCtaContainer,
     SearchInputContainer,
     StyledActionItem,
     StyledActionItemContainer,
     StyledContainer,
-    StyledCtaText,
-    StyledHeading,
-    StyledHeadingContainer,
-    StyledSearchClear,
     StyledSearchInput,
 } from "./styles"
 import messages from '../../messages';
 
-const SearchInput:React.FC<any> = ({onChange,value, ...props})=>(
+const SearchInput: React.FC<any> = ({ onChange, value, ...props }) => (
     <StyledSearchInput
         {...props}
         value={value || ''}
-        onChange={(e)=>{
-            if(onChange){
+        onChange={(e) => {
+            if (onChange) {
                 onChange(e?.target?.value)
             }
         }}
     />
 )
 
+export interface FilterSpec {
+    id: string;
+    render: ()=>JSX.Element;
+    renderAction?:()=> void;
+}
+
 
 interface Props {
-    heading: string;
     ctaLabel?: string;
-    handleCtaClick?:()=>void;
-    disableSearch?:boolean;
-    connectFilter?:any;
-    updateFilters?:any;
+    handleCtaClick?: () => void;
+    disableSearch?: boolean;
+    connectFilter?: any;
+    updateFilters?: any;
+    resetFilters?: any;
+    filters?:FilterSpec[];
 }
 
 const ListHeader: React.FC<Props> = ({
-    heading, ctaLabel, disableSearch, 
-    connectFilter, updateFilters, handleCtaClick
+    ctaLabel, disableSearch,
+    connectFilter, filters, updateFilters,
+    resetFilters, handleCtaClick
 }) => {
-    const [searchVisible, setSearchVisible] = useState(false);
     return (
         <StyledContainer>
-            <StyledHeadingContainer>
-                <StyledHeading variant='h4'>{heading}</StyledHeading>
-            </StyledHeadingContainer>
             <StyledActionItemContainer>
-                {(!disableSearch && connectFilter) &&<StyledActionItem>
-                    {searchVisible ? (<SearchInputContainer>
+                {(!disableSearch && connectFilter) && <StyledActionItem>
+                    <SearchInputContainer>
                         <SearchIcon
                             fontSize='medium'
                             style={{
-                                padding: '8px 8px',
-                                color: brand.textColourDark
+                                padding: '12px',
+                                paddingRight: '8px',
+                                color: colors.grey
 
                             }}
                         />
-                         {connectFilter('search', {
+                        {connectFilter('search', {
                             autoApplyFilters: true,
-                            autoFocus : true,
                             placeholder: messages.general.search,
                         })(SearchInput)}
-                        <StyledSearchClear>
-                            <CloseIcon
-                                fontSize='small'
-                                onClick={()=>{
-                                    setSearchVisible(false);
-                                    if(updateFilters){
-                                        updateFilters({
-                                            filters : {search : ''}
-                                        });
-                                    }
-                                }}
-                                style={{
-                                    color: brand.textColourDark,
-                                    cursor: 'pointer'
-
-                                }}
-                            />
-                        </StyledSearchClear>
-                    </SearchInputContainer>) : (
-                        <SearchCtaContainer
-                            onClick={()=>setSearchVisible(true)}
-                        >
-                            <SearchIcon
-                                fontSize={'medium'}
-                                style={{
-                                    marginRight: 8,
-                                    color: brand.textColourDark
-
-                                }}
-                            />
-                            <StyledCtaText variant='body2'>{messages.general.search}</StyledCtaText>
-                        </SearchCtaContainer>
-                    )}
+                    </SearchInputContainer>
                 </StyledActionItem>}
-                {ctaLabel && <StyledActionItem lastItem>
-                    <Button 
-                        variant="outlined" 
-                        startIcon={<AddIcon />}
-                        sx={{margin:0}}
+                {filters
+                ?.filter((filter)=>filter?.renderAction ? filter?.renderAction() : true)
+                ?.map((filter) => (
+                    <StyledActionItem key={filter.id}>
+                        {filter?.render()}
+                    </StyledActionItem>
+                ))}
+                {resetFilters && <StyledActionItem>
+                    <Button
+                        variant="text"
+                        onClick={resetFilters}
+                    >
+                        {messages.general.reset}
+                    </Button>
+                </StyledActionItem>}
+            </StyledActionItemContainer>
+            {ctaLabel && <StyledActionItemContainer>
+                <StyledActionItem>
+                    <Button
+                        variant="contained"
+                        endIcon={<AddIcon />}
                         onClick={handleCtaClick}
                     >
                         {ctaLabel}
                     </Button>
-                </StyledActionItem>}
-            </StyledActionItemContainer>
+                </StyledActionItem>
+            </StyledActionItemContainer>}
         </StyledContainer>
     )
 }

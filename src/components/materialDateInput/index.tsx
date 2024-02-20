@@ -59,7 +59,7 @@ const DateInput: React.FC<Props> = ({
                     openPickerIcon :()=>(
                         <CalendarMonthOutlinedIcon
                             style={{
-                                color : colors.grey100
+                                color : colors.grey
                             }}
                         />
                     ),
