@@ -8,6 +8,7 @@
       "edit" : "Edit",
       "save" : "Save",
       "add": "Add",
+      "saveChanges": "Save Changes",
       "noData" : "No data found",
       "back" : "Back",
       "errors" : {

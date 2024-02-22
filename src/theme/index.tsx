@@ -248,7 +248,6 @@ const theme = createTheme({
     MuiGrid: {
       styleOverrides: {
         root: {
-         flexDirection: 'row',
         },
         item:{
             flexDirection:'column', 
