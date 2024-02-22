@@ -126,7 +126,6 @@ const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
-          display: 'flex',
           alignItems: 'baseline',
           justifyContent: 'center',
           flexDirection: 'column'
@@ -136,7 +135,6 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          width: '100%',
           borderRadius: '20px',
           boxShadow: '0px 10px 10px -5px rgba(0, 0, 0, 0.04), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)',
           padding: '24px 40px'
