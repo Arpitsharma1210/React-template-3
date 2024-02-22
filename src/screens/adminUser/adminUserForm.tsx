@@ -197,8 +197,7 @@ const AdminUserForm: React.FC<Props> = ({
                                 type='submit'
                                 disabled={submitting || hasError}
                             >
-                                {/* {messages?.adminUser?.form?.submitCta} */}
-                                {messages?.general?.save}
+                                {messages?.adminUser?.form?.submitCta}
                             </Button>
                             <Button
                                 variant="outlined"
