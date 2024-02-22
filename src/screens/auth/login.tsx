@@ -35,7 +35,7 @@ const Login = () => {
         }));
 
     return (
-        <Container hideHeader centerAlign containerCss={{ width:'fit-content' }}>
+        <Container hideHeader centerAlign containerCss={{ width:'fit-content', marginTop:'70px' }}>
             <Card
                 bordered
                 cardCss={{
