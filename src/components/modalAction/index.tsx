@@ -62,7 +62,7 @@ const ModalAction: React.FC<Props> = ({
                     onClick={onSubmit}
                     disabled={submitting}
                 >
-                    {successCta || messages?.general?.save}
+                    {messages?.general?.save}
                 </Button>
             </StyledCtaContainer>
         </StyledContainer>

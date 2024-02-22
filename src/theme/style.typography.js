@@ -19,4 +19,5 @@ export const fontSize = {
     h3: '20px',
     h2: '22px',
     h1: '24px',
+    h4: '18px',
   };
