@@ -67,6 +67,7 @@ const IOSSwitch = styled((props: SwitchProps) => (
     disabled?:boolean;
     fullWidth?:boolean;
     onReadOnlyCtaClick?:()=>void;
+    labelPlacement?: 'start'|'end'|'top'|'bottom';
 }
 
 
@@ -79,6 +80,7 @@ const SwitchInput: React.FC<Props> = ({
     fullWidth,
     readOnly,
     disabled,
+    labelPlacement,
     onReadOnlyCtaClick,
     ...props
 }) => {
@@ -87,7 +89,8 @@ const SwitchInput: React.FC<Props> = ({
             <StyledFormControlLabel 
                 {...props}
                 control={<IOSSwitch checked={!!value} />} 
-                label={label} 
+                label={label}
+                labelPlacement={labelPlacement || "start"} 
                 onChange={() => {
                     if (onChange && !readOnly) {
                         onChange(!value);

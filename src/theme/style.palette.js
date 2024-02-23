@@ -8,7 +8,9 @@ export const colors = {
     red:'#FF505E',
     white:"#FFFFFF",
     yellowDark : '#723B13',
-    yellow : '#F9DD8D'
+    yellow : '#F9DD8D',
+    tableBorder: '#DDDDDD',
+    danger: '#FF505E',
 }
 
 export const brand = {

@@ -10,7 +10,7 @@ export const StyledChipContainer = styled.div`
     align-items: center;
     gap: 5px;
     border-radius: 60px;
-    background: ${brand.primaryLight};
+    background: ${brand.primaryMain};
     margin-right : 5px;
 `
 
