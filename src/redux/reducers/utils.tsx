@@ -1,5 +1,7 @@
-import { Action } from '../actions';
+import { Action, SET_STEP_NUMBER, STEP_FORM_DATA_SET } from '../actions';
 import { PagedEntity, getDefaultMetaData } from '../../models';
+import { StepFormState } from '../../models/genericEntities';
+import { Reducer } from 'redux';
 
 export const createBasicReducer = <T extends unknown>(
   key:string, initialState:T,
@@ -50,6 +52,31 @@ export const createPagedReducer = <T extends unknown>(
       }
       case `${key}_PAGINATION_RESET`:
         return initialState;
+      default:
+        return state;
+    }
+  };
+};
+export const createStepFormReducer = (
+  key: string,
+  initialState: StepFormState 
+): Reducer<StepFormState> => {
+  return (state: StepFormState = initialState, action: any): StepFormState => {
+    switch (action.type) {
+      case SET_STEP_NUMBER:
+        return {
+          ...state,
+          currentPage: action.payload.stepNumber,
+        };
+      case STEP_FORM_DATA_SET:
+        const { stepNumber, data } = action.payload;
+        return {
+          ...state,
+          forms: {
+            ...state.forms,
+            [stepNumber]: data,
+          },
+        };
       default:
         return state;
     }
