@@ -12,6 +12,14 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 
 export const FETCH_BASE_DATA = 'FETCH_BASE_DATA';
+export const BASE_DATA_UPDATE = 'BASE_DATA_UPDATE';
+
+export const SYSTEM_LOADER = 'SYSTEM_LOADER';
+export const STEP_FORM_DATA_SET = 'STEP_FORM_DATA_SET';
+export const STEP_FORM_VALIDATION_ERROR_SET = 'STEP_FORM_VALIDATION_ERROR_SET';
+export const STEP_FORM_VALIDATION_ERRORS_CLEAR = 'STEP_FORM_VALIDATION_ERRORS_CLEAR';
+export const SET_STEP_NUMBER ='SET_STEP_NUMBER';
+export const STEP_FORM = 'STEP_FORM';
 
 // Add Actions Here
 
@@ -200,7 +208,23 @@ export const logout = (): EmptyAction => emptyAction(LOGOUT);
 
 export const fetchBaseData = (): EmptyAction => emptyAction(FETCH_BASE_DATA);
 
-
-
-
-
+//STEP FORM
+export const setStepFormData = (stepNumber: number, data: any) => ({
+  type: STEP_FORM_DATA_SET,
+  payload: { stepNumber, data },
+});
+export const setStepValidationError = (
+  stepNumber: number,
+  errors: Record<string, string>
+) => ({
+  type: STEP_FORM_VALIDATION_ERROR_SET,
+  payload: { stepNumber, errors },
+});
+export const clearStepValidationErrors = (stepNumber: number) => ({
+  type: STEP_FORM_VALIDATION_ERRORS_CLEAR,
+  payload: stepNumber,
+});
+export const setCurrentStep = (stepNumber: number) => ({
+  type: SET_STEP_NUMBER,
+  payload: { stepNumber }
+});
