@@ -126,7 +126,6 @@ const theme = createTheme({
     MuiContainer: {
       styleOverrides: {
         root: {
-          display: 'flex',
           alignItems: 'baseline',
           justifyContent: 'center',
           flexDirection: 'column'
@@ -243,6 +242,15 @@ const theme = createTheme({
         root: {
           padding: 0,
           paddingRight: '8px'
+        }
+      }
+    },
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+        },
+        item:{
+            flexDirection:'column', 
         }
       }
     }

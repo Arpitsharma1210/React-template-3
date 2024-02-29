@@ -1,5 +1,5 @@
-import { Id } from './baseEntiies';
-import { Status } from './modules';
+import { Id } from "./baseEntiies";
+import { Status } from "./modules";
 
 
 
@@ -8,6 +8,7 @@ import { Status } from './modules';
 //   id: Id;
 //   isUpdate?: boolean;
 // }
+
 
 export interface Company {
   id: string;

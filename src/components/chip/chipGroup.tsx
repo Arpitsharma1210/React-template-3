@@ -118,8 +118,8 @@ const ChipGroup: React.FC<Props> = ({
                 >
                     <Chip
                         text={`+${popupChipCount}`}
-                        bgColor={colors.clientTagBgColor}
-                        textColor={colors.clientTagTextColor}
+                        bgColor={colors.greyLight}
+                        textColor={colors.grey}
                         chipSize={chipSize}
                     />
                 </StyledChipShowMoreContainer>
