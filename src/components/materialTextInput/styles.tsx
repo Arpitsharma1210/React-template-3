@@ -9,6 +9,6 @@ export const StyledInputContainer = styled.div`
 `
 
 export const StyledError = styled(Typography)`
-    color : ${colors.danger};
+    color : ${colors.red};
     margin-top:8px !important;
 `

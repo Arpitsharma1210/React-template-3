@@ -49,7 +49,7 @@ const Modal: React.FC<Props> = ({
                             <StyledCloseContainer onClick={onClose}>
                                 <CloseRoundedIcon
                                     style={{
-                                        color: colors.grey100
+                                        color: colors.grey
                                     }}
                                 />
                             </StyledCloseContainer>

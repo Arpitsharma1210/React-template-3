@@ -10,8 +10,11 @@ export enum AuthenticationStatus {
 }
 
 export enum Role {
-    ADMINISTRATOR = 'ADMINISTRATOR',
-    INVALID = 'INVALID'
+  ADMINISTRATOR = 'ADMINISTRATOR',
+  INVALID = 'INVALID',
+  ORG_ADMIN = "ORG_ADMIN",
+  ORG_CREATOR = "ORG_CREATOR",
+  ORG_VIEWER = "ORG_VIEWER"
 }
 
 export const RolePrioriry:any = {
@@ -19,6 +22,7 @@ export const RolePrioriry:any = {
 };
 
 export interface AuthState {
+    [x: string]: any;
     rights: Right[];
     status: AuthenticationStatus;
     role:Role;
@@ -53,7 +57,7 @@ export const defaultAuthState:AuthState = {
   },
 };
 
-const getRightsForRole = (role: Role): Right[] => {
+export const getRightsForRole = (role: Role): Right[] => {
   switch (role) {
     case Role.ADMINISTRATOR:
       return [

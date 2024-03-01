@@ -92,8 +92,8 @@ export const getDefaultModalState = (): ModalState => ({
   reject: () => Promise.reject(),
   resolve: () => Promise.resolve(),
 });
-
 export interface Option {
   id : (number | string);
   label : string;
 }
+

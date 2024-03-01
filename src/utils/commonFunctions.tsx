@@ -62,6 +62,14 @@ export const getSanitizedPhoneNumber = (phone?: string, dialcode?: string): (str
   return phone?.replace(dialcode, '')
 }
 
+export const convertToMomentDate = (
+  value: string | moment.Moment | undefined | null,
+): moment.Moment | undefined | null => {
+  if (isNull(value)) return null;
+  if (isUndefined(value)) return undefined;
+  return moment(value);
+};
+
 export const getLabelForInvitationStatus = (invitationStatus?: InvitationStatus) => {
   switch (invitationStatus) {
     case InvitationStatus.PENDING:

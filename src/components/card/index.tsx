@@ -12,8 +12,8 @@ interface Props {
 }
 
 const Card:React.FC<Props> = ({
-    children, cardCss, contentCss,header,
-    bordered
+    children, cardCss, contentCss,
+    bordered, header
 })=>{
 
     return (

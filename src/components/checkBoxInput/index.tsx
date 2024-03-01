@@ -2,8 +2,6 @@ import React from 'react';
 import { StyledContainer, StyledError } from '../textInput/styles';
 import { StyledCheckbox, StyledFormControlLabel } from './styles';
 
-
-
 interface Props {
     label?: string;
     value?: string;
@@ -16,7 +14,6 @@ interface Props {
     fullWidth?:boolean;
     onReadOnlyCtaClick?:()=>void;
 }
-
 
 const CheckBoxInput: React.FC<Props> = ({
     label,
