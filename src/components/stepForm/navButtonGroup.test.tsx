@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import NavButtonGroup from '../';
+import NavButtonGroup from './navButtonGroup';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { setCurrentStep } from '../../../../redux/actions';
+import { setCurrentStep } from '../../redux/actions';
 
 const mockStore = configureStore([]);
 

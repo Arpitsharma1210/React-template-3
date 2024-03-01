@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Popup Error Component matches snapshot when given props 1`] = `<DocumentFragment />`;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import StepNavigation from '../';
+import StepNavigation from '.';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import { setCurrentStep } from '../../../../redux/actions';
+import { setCurrentStep } from '../../../redux/actions';
 
 const mockStore = configureStore([]);
 

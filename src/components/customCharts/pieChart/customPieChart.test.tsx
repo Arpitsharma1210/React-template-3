@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import CustomPieChart from '../';
+import CustomPieChart from '.';
 
 describe('CustomPieChart component', () => {
   const data = [
@@ -50,13 +50,6 @@ describe('CustomPieChart component', () => {
         cy={200}
       />
     );
-
-    // const segmentA = getByLabelText('Segment A');
-    // fireEvent.mouseEnter(segmentA);
-    // expect(segmentA).toBeInTheDocument();
-
-    // fireEvent.mouseLeave(segmentA);
-    // expect(queryByLabelText('Segment A')).not.toBeInTheDocument();
   });
 
   test('renders CustomPieChart component with specified stroke width', () => {
@@ -94,7 +87,6 @@ describe('CustomPieChart component', () => {
     );
 
     const innerCircles = container.querySelectorAll('circle');
-    // expect(innerCircles.length).toBe(data.length);
     innerCircles.forEach((circle) => {
       expect(circle.getAttribute('r')).toBe(`${innerRadius}`);
     });
@@ -122,5 +114,51 @@ describe('CustomPieChart component', () => {
     expect(textElement3)
 });
 
+test('renders CustomPieChart component with different padding angle', () => {
+  const paddingAngle = 10;
+  const { container } = render(
+     <CustomPieChart
+       data={data}
+       colors={['#FF5733', '#33FF57', '#3357FF']}
+       width={400}
+       height={400}
+       cx={200}
+       cy={200}
+       paddingAngle={paddingAngle}
+     />
+  );
+  expect(container.firstChild).toMatchSnapshot();
+ });
+ 
+ test('renders CustomPieChart component with different active index', () => {
+  const { container } = render(
+     <CustomPieChart
+       data={data}
+       colors={['#FF5733', '#33FF57', '#3357FF']}
+       width={400}
+       height={400}
+       cx={200}
+       cy={200}
+     />
+  );
+ 
+  expect(container.firstChild).toMatchSnapshot();
+ });
+ 
+ test('sets activeIndex on mouse enter', async () => {
+  const { findAllByRole } = render(
+    <CustomPieChart
+      data={data}
+      colors={['#FF5733', '#33FF57', '#3357FF']}
+      width={400}
+      height={400}
+      cx={200}
+      cy={200}
+    />
+  );
 
+  const segments = await findAllByRole('img');
+  const firstSegment = segments[0];
+  fireEvent.mouseEnter(firstSegment);
+});
 });

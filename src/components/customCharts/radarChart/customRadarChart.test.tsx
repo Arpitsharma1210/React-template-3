@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import CustomRadarChart from '../';
+import CustomRadarChart from '.';
 
 describe('CustomRadarChart component', () => {
   const data = [
@@ -58,9 +58,7 @@ describe('CustomRadarChart component', () => {
       />
     );
 
-    // Assert that the rendered component matches the snapshot
     expect(container.firstChild).toMatchSnapshot();
 
-    // You can add more assertions here to test specific elements or behaviors
   });
 });

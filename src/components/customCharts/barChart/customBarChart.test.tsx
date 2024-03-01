@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import CustomBarChart from '../'; // assuming this test file is in the same directory as the component
+import CustomBarChart from '.';
 
 describe('CustomBarChart component', () => {
   const data = [
@@ -44,7 +44,7 @@ describe('CustomBarChart component', () => {
       const { container } = render(
         <CustomBarChart
           data={data}
-          width={100} // Narrow width to trigger the condition
+          width={100} 
           height={400}
           margin={{ top: 20, right: 30, bottom: 20, left: 30 }}
           xAxisDataKey='name'
@@ -82,7 +82,7 @@ describe('CustomBarChart component', () => {
           margin={{ top: 20, right: 30, bottom: 20, left: 30 }}
           xAxisDataKey='name'
           yAxisDataKeys={['value']}
-          colors={['#FF5733', '#33FF57', '#3357FF', '#FFFF33']} // Provide colors array with at least 3 elements
+          colors={['#FF5733', '#33FF57', '#3357FF', '#FFFF33']}
         />
       );
 
